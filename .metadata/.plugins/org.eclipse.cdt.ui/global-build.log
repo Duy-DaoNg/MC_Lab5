@@ -1,0 +1,20 @@
+18:55:52 **** Incremental Build of configuration Debug for project Test_For_Assignment ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/uart.d" -MT"Core/Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/uart.o"
+arm-none-eabi-gcc -o "Test_For_Assignment.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Micro Controller Lab\Assignment\Test_For_Assignment\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test_For_Assignment.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test_For_Assignment.elf
+ 
+arm-none-eabi-size   Test_For_Assignment.elf 
+arm-none-eabi-objdump -h -S  Test_For_Assignment.elf  > "Test_For_Assignment.list"
+arm-none-eabi-objcopy  -O ihex  Test_For_Assignment.elf  "Test_For_Assignment.hex"
+   text	   data	    bss	    dec	    hex	filename
+  18656	    168	   1992	  20816	   5150	Test_For_Assignment.elf
+arm-none-eabi-objcopy  -O binary  Test_For_Assignment.elf  "Test_For_Assignment.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Test_For_Assignment.hex
+Finished building: Test_For_Assignment.bin
+ 
+ 
+Finished building: Test_For_Assignment.list
+ 
